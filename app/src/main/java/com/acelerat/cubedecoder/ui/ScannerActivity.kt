@@ -22,46 +22,13 @@ class ScannerActivity : CameraActivity() {
     private lateinit var colorDetector: ColorDetector
 
     private val rubiksCubeColors = mapOf(
-
-        //V1
-//        "white" to arrayOf(Scalar(0.0, 0.0, 200.0), Scalar(180.0, 50.0, 255.0)),
-//        "blue" to arrayOf(Scalar(5.0, 100.0, 100.0), Scalar(15.0, 255.0, 255.0)),
-//        "red" to arrayOf(Scalar(0.0, 100.0, 100.0), Scalar(10.0, 255.0, 255.0)),
-//        "red2" to arrayOf(Scalar(170.0, 100.0, 100.0), Scalar(180.0, 255.0, 255.0)),
-//        "green" to arrayOf(Scalar(45.0, 100.0, 100.0), Scalar(75.0, 255.0, 255.0)),
-//        "orange" to arrayOf(Scalar(100.0, 100.0, 100.0), Scalar(130.0, 255.0, 255.0)),
-//        "yellow" to arrayOf(Scalar(20.0, 39.0, 64.0), Scalar(40.0, 255.0, 255.0)),
-
-        //V2
-//        "white" to arrayOf(Scalar(0.0, 0.0, 231.0), Scalar(180.0, 18.0, 255.0)),
-//        "blue" to arrayOf(Scalar(90.0, 50.0, 70.0), Scalar(128.0, 255.0, 255.0)),
-//        "red1" to arrayOf(Scalar(159.0, 50.0, 70.0), Scalar(180.0, 255.0, 255.0)),
-//        "red2" to arrayOf(Scalar(0.0, 50.0, 70.0), Scalar(9.0, 255.0, 255.0)),
-//        "green" to arrayOf(Scalar(36.0, 50.0, 70.0), Scalar(89.0, 255.0, 255.0)),
-//        "orange" to arrayOf(Scalar(10.0, 50.0, 70.0), Scalar(24.0, 255.0, 255.0)),
-//        "yellow" to arrayOf(Scalar(25.0, 50.0, 70.0), Scalar(35.0, 255.0, 255.0)),
-//        "purple" to arrayOf(Scalar(129.0, 50.0, 70.0), Scalar(158.0, 255.0, 255.0)),
-//        "black" to arrayOf(Scalar(0.0, 0.0, 0.0), Scalar(180.0, 255.0, 30.0)),
-//        "gray" to arrayOf(Scalar(0.0, 0.0, 40.0), Scalar(180.0, 18.0, 230.0)),
-
-        //V3 the closest one so far
-//        "white" to arrayOf(Scalar(0.0, 0.0, 200.0), Scalar(180.0, 50.0, 255.0)),
-//        "blue" to arrayOf(Scalar(5.0, 100.0, 100.0), Scalar(15.0, 255.0, 255.0)),
-//        "red" to arrayOf(Scalar(0.0, 100.0, 20.0), Scalar(10.0, 255.0, 255.0)),
-//        "red2" to arrayOf(Scalar(160.0, 100.0, 20.0), Scalar(179.0, 255.0, 255.0)),
-//        "green" to arrayOf(Scalar(45.0, 100.0, 100.0), Scalar(75.0, 255.0, 255.0)),
-//        "orange" to arrayOf(Scalar(100.0, 100.0, 100.0), Scalar(126.0, 255.0, 255.0)),
-//        "yellow" to arrayOf(Scalar(70.0, 50.0, 70.0), Scalar(100.0, 255.0, 255.0)),
-
-
-        //V4
         "white" to arrayOf(Scalar(0.0, 0.0, 200.0), Scalar(180.0, 50.0, 255.0)),
         "blue" to arrayOf(Scalar(5.0, 100.0, 100.0), Scalar(15.0, 255.0, 255.0)),
-//        "red" to arrayOf(Scalar(0.0, 100.0, 20.0), Scalar(10.0, 255.0, 255.0)),
-//        "red2" to arrayOf(Scalar(160.0, 100.0, 20.0), Scalar(179.0, 255.0, 255.0)),
+        "red" to arrayOf(Scalar(0.0, 100.0, 20.0), Scalar(10.0, 255.0, 255.0)),
+        "red2" to arrayOf(Scalar(160.0, 100.0, 20.0), Scalar(179.0, 255.0, 255.0)),
         "green" to arrayOf(Scalar(45.0, 100.0, 100.0), Scalar(75.0, 255.0, 255.0)),
-        "red_color" to arrayOf(Scalar(100.0, 100.0, 100.0), Scalar(126.0, 255.0, 255.0)),
-        "yellow" to arrayOf(Scalar(70.0, 50.0, 70.0), Scalar(100.0, 255.0, 255.0)),
+        "orange" to arrayOf(Scalar(100.0, 100.0, 100.0), Scalar(126.0, 255.0, 255.0)),
+        "yellow" to arrayOf(Scalar(70.0, 50.0, 70.0), Scalar(100.0, 255.0, 255.0))
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,11 +48,11 @@ class ScannerActivity : CameraActivity() {
 
         cameraBridgeViewBase.setCvCameraViewListener(object : CameraBridgeViewBase.CvCameraViewListener2 {
             override fun onCameraViewStarted(width: Int, height: Int) {
-                //
+                //No op
             }
 
             override fun onCameraViewStopped() {
-                //
+                //No op
             }
 
             override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat? {
